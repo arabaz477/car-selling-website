@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from webapp.views import create_order,payment_success,OrderListView
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
@@ -28,6 +29,7 @@ from webapp.views import (
     BookListView
 )
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',StudentListView.as_view()),
@@ -39,7 +41,10 @@ urlpatterns = [
     path('cars/', CarListView.as_view()),
     path('cars/<int:pk>/', CarDetailView.as_view()),
     path('api/jwtDom/',include('jwtDom.urls')),
-    path('imgUpload/',include('imgUpload.urls')),
+    path("api/", include("imgUpload.urls")),
+    path('created-order/',create_order),
+    path('payment-success/',payment_success),
+    path('orders/',OrderListView.as_view()),
 
 
 ]

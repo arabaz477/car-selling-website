@@ -1,18 +1,7 @@
-from django.shortcuts import render
-from django.contrib import messages
-from .forms import ImagesUploadForm
-from .models import ImagesUpload
+from rest_framework.generics import ListCreateAPIView
+from .models import ImageUpload
+from .serializers import ImageUploadSerializer
 
-
-def images(request):
-    if request.method == "POST":
-        fm = ImagesUploadForm(request.POST)
-        if fm.is_valid():
-            fm.save()
-            messages.success(request, "Image Successfully Uploaded")
-            # return redirect("/")
-
-    else:
-        fm = ImagesUploadForm()
-    img = ImagesUpload.objects.all()
-    return render(request, "images.html", {"img": img, "fm": fm})
+class ImageUploadView(ListCreateAPIView):
+    queryset = ImageUpload.objects.all()
+    serializer_class = ImageUploadSerializer

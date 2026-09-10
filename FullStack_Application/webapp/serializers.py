@@ -1,6 +1,6 @@
-from rest_framework import serializers
 from .models import Student,Car,Mobile,Book,Laptop
-
+from rest_framework import serializers
+from .models import Order
 
 class StudentSerializers(serializers.ModelSerializer):
     class Meta:
@@ -28,4 +28,11 @@ class BookSerializers(serializers.ModelSerializer):
     class Meta:
         model=Book
         fields='__all__'
+
+
+
+class OrderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = "__all__"
 

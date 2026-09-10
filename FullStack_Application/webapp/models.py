@@ -77,6 +77,15 @@ class Book(models.Model):
         return self.book_name
 
 
+class Order(models.Model):
+    payment_id = models.CharField(max_length=200)
+    order_id = models.CharField(max_length=200)
+    amount = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+    def __str__(self):
+        return self.payment_id
 
 
 
