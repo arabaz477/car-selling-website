@@ -1,0 +1,59 @@
+.admin-orders {
+  width: 90%;
+  margin: 40px auto;
+}
+
+.admin-orders h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+  font-size: 30px;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.15);
+}
+
+.order-table thead {
+  background: #222;
+  color: white;
+}
+
+.order-table th,
+.order-table td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.order-table tbody tr:hover {
+  background: #f5f5f5;
+  transition: 0.3s;
+}
+
+.order-table td {
+  font-size: 15px;
+}
+
+.amount {
+  color: green;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .order-table {
+    font-size: 12px;
+  }
+
+  .order-table th,
+  .order-table td {
+    padding: 8px;
+  }
+
+  .admin-orders h2 {
+    font-size: 24px;
+  }
+}

@@ -10,7 +10,10 @@ import "swiper/css/thumbs";
 import axios from "axios";
 import './CarDetails.css'
 
+
+
 function CardDetails() {
+
   const { id } = useParams();
   const [car, setCar] = useState(null);
 
@@ -64,6 +67,52 @@ const addToCard = (car) => {
 
   return (
       <>
+        <Swiper
+     modules={[Autoplay]}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+      }}
+      loop={true}
+    >
+      <SwiperSlide>
+       <div>
+        <img
+          src="https://png.pngtree.com/background/20230419/original/pngtree-red-car-light-interior-background-picture-image_2448014.jpg" alt="car is very high_price"
+          style={{
+            width: "100%",
+            height: "500px",
+            objectFit: "cover",
+
+          }}
+        />
+      </div>
+      </SwiperSlide>
+      <SwiperSlide>
+         <div>
+        <img
+          src="https://4kwallpapers.com/images/wallpapers/lamborghini-2560x1440-19888.jpg"
+          style={{
+            width: "100%",
+            height: "500px",
+            objectFit: "cover",
+          }}
+        />
+      </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div>
+        <img
+          src="https://wallpapercave.com/wp/wp7355092.jpg"
+          style={{
+            width: "100%",
+            height: "500px",
+            objectFit: "cover",
+          }}
+        />
+      </div>
+      </SwiperSlide>
+    </Swiper>
   <div className="car-details">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
@@ -91,6 +140,9 @@ const addToCard = (car) => {
 
     <div className="car-info">
       <h1>{car.car_name}</h1>
+      <div className="rating">
+ ⭐⭐⭐⭐⭐ <span>(4.9/5 Reviews)</span>
+</div>
       <h2>₹ {car.car_price}</h2>
 
       <div className="spec">
@@ -113,17 +165,14 @@ const addToCard = (car) => {
         <span>{car.car_version}</span>
       </div>
 
-      <p>{car.description}</p>
+    <p>{car.description}</p>
 
       <div className="btns">
-
 <Link to={`/card/${car.id}/AddPage`}>
   <button onClick={() => addToCart(car)}>
-    Add To Cart
-  </button>
+ 🛒 Add To Cart
+</button>
 </Link>
-        <button className="buy-btn">Buy Now</button>
-
 
       </div>
 
@@ -131,9 +180,12 @@ const addToCard = (car) => {
 
   </div>
 
+
+
  <div className="description">
-          <h1><b>description
-              </b></h1>
+          <h1>🚗 Vehicle Overview</h1>
+
+
               <p>For other uses, see Car (disambiguation).
 The Ford Model T, produced from 1908 to 1927, is widely credited with being the first mass-affordable automobile, and it remains one of the best-selling cars of all time.
 Classification	Vehicle
@@ -149,6 +201,7 @@ first steam-powered road vehicle in 1769, and the Swiss inventor François Isaac
  everyday use—was invented in 1886, when the German inventor Carl Benz patented his Benz Patent-</p>
 
           </div>
+
           </>
 
   );

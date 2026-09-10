@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./List.css";
 
+
 function Car_listing() {
   const [cars, setCars] = useState([]);
   const [brand, setBrand] = useState("");
@@ -44,10 +45,11 @@ function Car_listing() {
         ₹ {car.car_price}
       </div>
 
-      <button className="view-btn">
+      <Link to={`/Card/${car.id}/`}>
+  <button className="view-btn">
         View Details
       </button>
-
+</Link>
 <span className="badge">New</span>
 
       <img src={car.car_images1} alt="" />
@@ -81,10 +83,10 @@ function Car_listing() {
       <button className="view-btn">
         View Details
       </button>
-
     </div>
   ))}
 </div>
+
   );
 }
 

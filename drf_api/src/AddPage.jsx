@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 import "./Page.css";
 
 function AddPage() {
@@ -47,6 +48,54 @@ const grandTotal = cars.reduce(
   0
 );
 
+const handlePayment = async () => {
+  try {
+
+    const { data } = await axios.post(
+      "http://127.0.0.1:8000/created-order/",
+      {
+        amount: grandTotal,
+      }
+    );
+
+    console.log(data);
+
+    const options = {
+      key: "rzp_test_TXuzSLE4v1nSqc",
+
+      amount: data.amount,
+      currency: data.currency,
+      order_id: data.id,
+
+      name: "Car Selling Website",
+      description: "Car Purchase",
+
+      handler: async function (response) {
+
+        await axios.post(
+          "http://127.0.0.1:8000/payment-success/",
+          {
+            payment_id: response.razorpay_payment_id,
+            order_id: response.razorpay_order_id,
+            amount: grandTotal,
+          }
+        );
+
+        localStorage.removeItem("cart");
+        setCars([]);
+
+        alert("Order Placed Successfully");
+      },
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
+
+  } catch (error) {
+    console.log(error);
+    alert("Payment Failed");
+  }
+};
   return (
     <div className="core">
       <h2>Cart Items</h2>
@@ -92,9 +141,9 @@ const grandTotal = cars.reduce(
 {/*         Proceed To Payment */}
 {/*     </button> */}
 
-    <button>
-        Proceed To Payment
-    </button>
+<button onClick={handlePayment}>
+ Proceed To Payment
+</button>
 </div>
     </div>
   );

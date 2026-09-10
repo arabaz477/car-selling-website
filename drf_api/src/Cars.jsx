@@ -18,8 +18,44 @@ function Cars() {
 
   return (
   <div className="main">
-<h3><marquee>⚜️♻️....Featured_Car....♻️⚜️</marquee></h3>
-  <p>car details</p>
+<div className="hero-content">
+
+    <h1>Drive Your Dream Car Today</h1>
+
+    <p>
+        Buy, Sell & Explore Premium Cars at the Best Prices.
+        Trusted by Thousands of Happy Customers Across India.
+    </p>
+
+    <div className="hero-btns">
+        <button className="btn1">Explore Cars</button>
+        <button className="btn2">Sell Your Car</button>
+    </div>
+    <section className="features">
+    <div className="feature">
+        <h2>5000+</h2>
+        <p>Cars Sold</p>
+    </div>
+
+    <div className="feature">
+        <h2>3000+</h2>
+        <p>Happy Customers</p>
+    </div>
+
+    <div className="feature">
+        <h2>100+</h2>
+        <p>Dealers</p>
+    </div>
+
+    <div className="feature">
+        <h2>24/7</h2>
+        <p>Support</p>
+    </div>
+</section>
+</div>
+ <h2 className="section-title">
+   🚗 Featured Premium Cars
+</h2>
     <div className="super">
       {cars.map((car) => (
   <Link
@@ -27,18 +63,20 @@ function Cars() {
     to={`/card/${car.id}`}
     className="text-decoration-none"
   >
-    <div className="demo">
-      <img
-        src={car.car_images}
-        alt={car.car_name}
-      />
+   <div className="demo">
+  <span className="new-badge">NEW</span>
 
-      <div className="card-content">
-        <h4>{car.car_name}</h4>
-        <p>💰 ₹{car.car_price}</p>
-        <p>⚡ Speed: {car.car_speed}</p>
-      </div>
-    </div>
+  <img
+    src={car.car_images}
+    alt={car.car_name}
+  />
+
+  <div className="card-content">
+    <h4>{car.car_name}</h4>
+    <p>💰 ₹{car.car_price}</p>
+    <p>⚡ Speed: {car.car_speed}</p>
+  </div>
+</div>
   </Link>
 ))}
     </div>
@@ -59,31 +97,7 @@ function Cars() {
         Next
       </button>
     </div>
-         <div className="Car_log">
-<Link to="/Car_listing" className="logo">
-<img src="https://img2.cgtrader.com/items/861042/6674934176/mahindra-car-logo-keychain-3d-model-3d-model-max-obj-fbx-mtl-tga.jpg"/>
-</Link>
 
-<Link to="/Car_listing" className="logo">
-<img src="https://i.pinimg.com/originals/ad/f6/1a/adf61a22a4258349861fa00a7420593c.jpg"/>
-</Link>
-
-<Link to="/Car_listing" className="logo">
-<img src="https://logos-world.net/wp-content/uploads/2021/10/Tata-Symbol.png"/>
-</Link>
-
-<Link to="/Car_listing" className="logo">
-<img src="https://i.pinimg.com/originals/fe/70/6f/fe706fd0fb1c4ec175559bbb13bf19ba.jpg"/>
-</Link>
-
-<Link to="/Car_listing" className="logo">
-<img src="https://tse1.mm.bing.net/th/id/OIP.04wBQvJ15D6EXKPeKkkahwHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"/>
-</Link>
-
-<Link to="/Car_listing" className="logo">
-<img src="https://car-brand-names.com/wp-content/uploads/2016/03/Suzuki-emblem-4-768x768.jpg"/>
-</Link>
-</div>
 </div>
 );
 

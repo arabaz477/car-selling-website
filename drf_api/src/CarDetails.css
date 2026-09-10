@@ -22,7 +22,7 @@ body{
 
 /* Slider */
 .swiper{
-    width:55%;
+    width:100%;
 }
 
 .slider-img{
@@ -89,45 +89,6 @@ body{
     font-size:16px;
 }
 
-/* Buttons */
-.btns{
-    display:flex;
-    gap:15px;
-    margin-top:30px;
-}
-
-.cart-btn,
-.buy-btn{
-    padding:14px 28px;
-    border:none;
-    border-radius:10px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.cart-btn{
-    background:#ef4444;
-    color:white;
-}
-
-.cart-btn:hover{
-    background:#dc2626;
-    transform:translateY(-2px);
-}
-
-.buy-btn{
-    background:#1e3a8a;
-    color:white;
-}
-
-.buy-btn:hover{
-    background:#1e40af;
-    transform:translateY(-2px);
-}
-
-/* Swiper Buttons */
 .swiper-button-prev,
 .swiper-button-next{
     color:white !important;
@@ -142,31 +103,41 @@ body{
 }
 
 /* Description Box */
-.description{
-    width:90%;
-    margin:30px auto;
-    padding:25px;
-    background:white;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+.description {
+  width: 95%;
+  max-width: 1400px;
+  margin: 50px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
 }
 
-.description h1{
-    color:#111827;
-    margin-bottom:15px;
-    border-left:5px solid #ef4444;
-    padding-left:12px;
+.description h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: #111827;
+  text-transform: uppercase;
+  position: relative;
 }
 
-.description p{
-    color:#4b5563;
-    line-height:1.9;
-    font-size:16px;
-    font-weight:normal;
-    text-align:justify;
+.description h1::after {
+  content: "";
+  width: 100px;
+  height: 4px;
+  background: #0d6efd;
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
 }
 
-/* Mobile */
+.description p {
+  color: #4b5563;
+  line-height: 2;
+  font-size: 17px;
+  text-align: justify;
+}/* Mobile */
 @media(max-width:768px){
 
     .car-details{
@@ -199,4 +170,40 @@ body{
     .buy-btn{
         width:100%;
     }
+}
+
+   .description{
+        margin:20px;
+        padding:25px;
+    }
+}
+
+.btns {
+  margin-top: 30px;
+}
+
+.btns button {
+  width: 100%;
+  border: none;
+  padding: 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg,#0d6efd,#2563eb);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btns button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(37,99,235,.4);
+}
+ .description {
+    padding: 25px;
+  }
+
+  .description h1 {
+    font-size: 2rem;
+  }
 }
