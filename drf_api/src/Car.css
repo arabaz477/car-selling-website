@@ -1,11 +1,11 @@
-/* ===== Main Page ===== */
+
 
 .main{
     background:#f4f7fc;
     min-height:100vh;
 }
 
-/* ===== Hero Section ===== */
+
 
 .hero-content{
     background: linear-gradient(
@@ -42,7 +42,7 @@
     margin-bottom:30px;
 }
 
-/* ===== Buttons ===== */
+
 
 .hero-btns{
     display:flex;
@@ -77,7 +77,6 @@
     transform:translateY(-5px);
 }
 
-/* ===== Stats ===== */
 
 .features{
     width:100%;
@@ -105,7 +104,7 @@
     color:white;
 }
 
-/* ===== Heading ===== */
+
 
 .main > p{
     text-align:center;
@@ -115,7 +114,6 @@
     color:#111827;
 }
 
-/* ===== Car Grid ===== */
 
 .super{
     display:grid;
@@ -124,7 +122,7 @@
     padding:20px 40px 60px;
 }
 
-/* ===== Card ===== */
+
 
 .demo{
     position:relative;
@@ -146,7 +144,6 @@
     object-fit:cover;
 }
 
-/* ===== New Badge ===== */
 
 .new-badge{
     position:absolute;
@@ -161,7 +158,6 @@
     z-index:10;
 }
 
-/* ===== Card Content ===== */
 
 .card-content{
     padding:20px;
@@ -179,7 +175,7 @@
     font-size:15px;
 }
 
-/* ===== Pagination ===== */
+
 
 .pagination{
     display:flex;
@@ -213,7 +209,7 @@
     font-weight:bold;
 }
 
-/* ===== Mobile ===== */
+
 
 @media(max-width:768px){
 
@@ -228,11 +224,12 @@
     .super{
         padding:20px;
     }
-}
+
 .section-title{
     text-align:center;
     font-size:2.5rem;
     font-weight:800;
     margin:60px 0 30px;
     color:#111827;
+}
 }

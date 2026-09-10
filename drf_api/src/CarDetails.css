@@ -170,13 +170,13 @@ body{
     .buy-btn{
         width:100%;
     }
-}
+
 
    .description{
         margin:20px;
         padding:25px;
     }
-}
+
 
 .btns {
   margin-top: 30px;
@@ -206,4 +206,3 @@ body{
   .description h1 {
     font-size: 2rem;
   }
-}
