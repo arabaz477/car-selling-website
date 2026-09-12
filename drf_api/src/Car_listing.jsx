@@ -12,7 +12,7 @@ function Car_listing() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/cars/")
+      .get("https://car-selling-website-m2sn.onrender.com/cars/")
       .then((res) => {
         setCars(res.data.results);
       })
@@ -52,7 +52,7 @@ function Car_listing() {
 </Link>
 <span className="badge">New</span>
 
-      <img src={car.car_images1} alt="" />
+      <img src={`https://car-selling-website-m2sn.onrender.com${car.image}`}>
 
       <h3>{car.car_name}</h3>
 

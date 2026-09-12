@@ -52,7 +52,7 @@ const handlePayment = async () => {
   try {
 
     const { data } = await axios.post(
-      "http://127.0.0.1:8000/created-order/",
+      "https://car-selling-website-m2sn.onrender.com/orders/",
       {
         amount: grandTotal,
       }

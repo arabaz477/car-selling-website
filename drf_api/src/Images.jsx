@@ -9,7 +9,7 @@ function ImageUpload() {
 
   const fetchImages = () => {
     axios
-     .get("https://car-selling-website-m2sn.onrender.com/api/jwtDom/images/",)
+     .get("https://car-selling-website-m2sn.onrender.com/api/images/")
       .then((res) => {
         setImages(res.data.results); //
       })
@@ -29,7 +29,7 @@ function ImageUpload() {
 
     try {
       await axios.post(
-        "http://127.0.0.1:8000/api/images/",
+        "https://car-selling-website-m2sn.onrender.com/api/images/",
         formData,
         {
           headers: {
@@ -41,7 +41,7 @@ function ImageUpload() {
       setTitle("");
       setImage(null);
 
-      fetchImages();
+      fetchImages(); // upload ke baad refresh
     } catch (error) {
       console.log(error);
       alert("Upload Failed");
@@ -51,7 +51,7 @@ function ImageUpload() {
   return (
     <div className="container mt-4">
 
-  <h1 className="heading">🚗Old Car Selling</h1>
+  <h1 className="heading">🚗 Old Car Selling</h1>
 
   <form onSubmit={handleSubmit}>
     <input

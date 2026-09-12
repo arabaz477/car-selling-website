@@ -50,7 +50,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -66,6 +66,8 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
+
+
 
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -173,3 +175,7 @@ ALLOWED_HOSTS=["*"]
 
 RAZORPAY_KEY_ID ="rzp_test_TXuzSLE4v1nSqc"
 RAZORPAY_KEY_SECRET="7jWKINh8miWKZ9vZumGYJK2P"
+
+CORS_ALLOWED_ORIGINS = [
+    "https://drfapi-git-main-arabazs-projects.vercel.app/",
+]

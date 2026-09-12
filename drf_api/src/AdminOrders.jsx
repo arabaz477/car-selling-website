@@ -7,7 +7,7 @@ function AdminOrders() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/orders/")
+      .get("https://car-selling-website-m2sn.onrender.com/orders/")
       .then((res) => {
         console.log("API Response:", res.data);
 
