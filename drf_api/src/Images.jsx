@@ -51,7 +51,7 @@ function ImageUpload() {
   return (
     <div className="container mt-4">
 
-  <h1 className="heading">🚗 Old Car Selling</h1>
+  <h1 className="heading">🚗Old Car Selling</h1>
 
   <form onSubmit={handleSubmit}>
     <input
