@@ -9,9 +9,9 @@ function ImageUpload() {
 
   const fetchImages = () => {
     axios
-      .get("http://127.0.0.1:8000/api/images/")
+     .get("https://car-selling-website-m2sn.onrender.com/api/jwtDom/images/",)
       .then((res) => {
-        setImages(res.data.results); // pagination ke liye
+        setImages(res.data.results); //
       })
       .catch((err) => console.log(err));
   };
@@ -41,7 +41,7 @@ function ImageUpload() {
       setTitle("");
       setImage(null);
 
-      fetchImages(); // upload ke baad refresh
+      fetchImages();
     } catch (error) {
       console.log(error);
       alert("Upload Failed");

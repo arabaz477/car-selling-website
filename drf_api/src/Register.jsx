@@ -10,7 +10,7 @@ function Register() {
     e.preventDefault();
 
     const response = await fetch(
-      "http://127.0.0.1:8000/api/jwtDom/register/",
+        "https://car-selling-website-m2sn.onrender.com/api/jwtDom/register/"
       {
         method: "POST",
         headers: {

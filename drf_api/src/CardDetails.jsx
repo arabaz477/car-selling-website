@@ -18,8 +18,7 @@ function CardDetails() {
   const [car, setCar] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(`http://127.0.0.1:8000/cars/${id}/`)
+    axios.get(`https://car-selling-website-m2sn.onrender.com/cars/${id}/`)
       .then((res) => {
         setCar(res.data);
       })

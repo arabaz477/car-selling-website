@@ -10,7 +10,7 @@ function Cars() {
    const [page, setPage] = useState(1);
 
   useEffect(() => {
-    axios.get(`http://127.0.0.1:8000/cars/?page=${page}`)
+     axios.get("https://car-selling-website-m2sn.onrender.com/cars/")
         .then((res) => {
         setCars(res.data.results);
       });
