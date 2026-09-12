@@ -28,8 +28,6 @@ from webapp.views import (
     MobileListView,
     BookListView
 )
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',StudentListView.as_view()),
@@ -45,8 +43,6 @@ urlpatterns = [
     path('created-order/',create_order),
     path('payment-success/',payment_success),
     path('orders/',OrderListView.as_view()),
-
-
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

@@ -112,6 +112,8 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
+
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -167,7 +169,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 6
 }
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS=["*"]
 
 RAZORPAY_KEY_ID ="rzp_test_TXuzSLE4v1nSqc"
 RAZORPAY_KEY_SECRET="7jWKINh8miWKZ9vZumGYJK2P"
