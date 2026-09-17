@@ -94,23 +94,23 @@ WSGI_APPLICATION = 'FullStack_Application.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE':'django.db.backends.mysql',
-#         'NAME':'FULL_STACK_WEB_RECORD',
-#         'USER':'root',
-#         'PASSWORD':'BAZ477@ALI',
-#         'HOST':'localhost',
-#         'PORT':'3306',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE':'django.db.backends.mysql',
+        'NAME':'FULL_STACK_WEB_RECORD',
+        'USER':'root',
+        'PASSWORD':'BAZ477@ALI',
+        'HOST':'localhost',
+        'PORT':'3306',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
@@ -176,6 +176,8 @@ ALLOWED_HOSTS=["*"]
 RAZORPAY_KEY_ID ="rzp_test_TXuzSLE4v1nSqc"
 RAZORPAY_KEY_SECRET="7jWKINh8miWKZ9vZumGYJK2P"
 
-CORS_ALLOWED_ORIGINS = [
-    "https://drfapi-git-main-arabazs-projects.vercel.app/",
-]
+
+
+# CORS_ALLOWED_ORIGINS = [
+#     "https://drfapi-git-main-arabazs-projects.vercel.app/",
+# ]
