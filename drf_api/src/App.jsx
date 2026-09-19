@@ -6,7 +6,6 @@ import Cars from "./Cars";
 import Car_listing from "./Car_listing";
 import Login from "./Login";
 import Register from "./Register";
-import Details from "./Details";
 import CardDetails from "./CardDetails";
 import AddPage from "./AddPage";
 import AdminOrders from "./AdminOrders";

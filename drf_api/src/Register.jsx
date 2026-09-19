@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Register.css"
+import "./Register.css";
 
 function Register() {
   const [username, setUsername] = useState("");
@@ -9,71 +9,76 @@ function Register() {
   const registerUser = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(
-      "https://car-selling-website-m2sn.onrender.com/api/jwtDom/register/",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: username,
-          email: email,
-          password: password,
-        }),
+    try {
+      const response = await fetch(
+        "https://car-selling-website-m2sn.onrender.com/api/jwtDom/register/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username,
+            email,
+            password,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Registration Successful");
+        console.log(data);
+
+        setUsername("");
+        setEmail("");
+        setPassword("");
+      } else {
+        alert("Registration Failed");
+        console.log(data);
       }
-    );
-
-    const data = await response.json();
-
-    if (response.ok) {
-      alert("Registration Successful");
-      console.log(data);
-
-      setUsername("");
-      setEmail("");
-      setPassword("");
-    } else {
-      alert("Registration Failed");
-      console.log(data);
+    } catch (error) {
+      console.log("Error:", error);
+      alert("Server Error");
     }
   };
 
   return (
     <div className="register-container">
-  <form className="register-form" onSubmit={registerUser}>
-    <h2>Register</h2>
+      <form className="register-form" onSubmit={registerUser}>
+        <h2>Register</h2>
 
-    <input
-      type="text"
-      placeholder="Enter Username"
-      value={username}
-      onChange={(e) => setUsername(e.target.value)}
-    />
+        <input
+          type="text"
+          placeholder="Enter Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
 
-    <input
-      type="email"
-      placeholder="Enter Email"
-      value={email}
-      onChange={(e) => setEmail(e.target.value)}
-    />
+        <input
+          type="email"
+          placeholder="Enter Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-    <input
-      type="password"
-      placeholder="Enter Password"
-      value={password}
-      onChange={(e) => setPassword(e.target.value)}
-    />
+        <input
+          type="password"
+          placeholder="Enter Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-    <button type="submit" className="register-btn">
-      Register
-    </button>
+        <button type="submit" className="register-btn">
+          Register
+        </button>
 
-    <p className="login-link">
-      Already have an account? <a href="/login">Login</a>
-    </p>
-  </form>
-</div>
+        <p className="login-link">
+          Already have an account? <a href="/login">Login</a>
+        </p>
+      </form>
+    </div>
   );
 }
 
